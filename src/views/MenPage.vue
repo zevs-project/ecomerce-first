@@ -5,4 +5,9 @@
 <script setup>
 </script>
 
-<style></style>
+<style lang="scss">
+@import './../styles/variables.scss';
+.page {
+  font-family: $fontFamily;
+}
+</style>
