@@ -1,9 +1,8 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
   <router-link :to="{name: 'men'}">Men</router-link>
   <router-link :to="{name: 'women'}">Women</router-link>
 
-  <router-view></router-view>
+  <router-view></router-view>\
 </template>
 
 <script>
@@ -24,4 +23,7 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+</style>
+<style lang="scss">
+@import './styles/index.scss';
 </style>
