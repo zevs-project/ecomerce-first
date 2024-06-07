@@ -5,4 +5,9 @@
 <script setup>
 </script>
 
-<style></style>
+<style>
+.page {
+  font-family: var(--font-family);
+  color: var(--text-color);
+}
+</style>

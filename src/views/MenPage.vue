@@ -7,6 +7,7 @@
 
 <style lang="scss">
 .page {
-  font-family: $fontFamily;
+  font-family: var(--font-family);
+  color: var(--text-color);
 }
 </style>

@@ -1,17 +1,34 @@
 <template>
-  <router-link :to="{name: 'men'}">Men</router-link>
-  <router-link :to="{name: 'women'}">Women</router-link>
+  <div class="root" :style="currentTheme">
+    <router-link :to="{ name: 'men' }">Men</router-link>
+    <router-link :to="{ name: 'women' }">Women</router-link>
 
-  <router-view></router-view>
+    <button @click="setTheme('lightTheme')">Light Theme</button>
+    <button @click="setTheme('darkTheme')">Dark Theme</button>
+
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-
+import { darkTheme } from './styles/themes/darkTheme';
+import { lightTheme } from './styles/themes/lightTheme';
 export default {
-  name: 'App',
-  components: {
+  name: "App",
+  data() {
+    return  {
+       currentTheme: lightTheme,
+    }
+  },
+  components: {},
+  methods: {
+    setTheme(theme) {
+      this.currentTheme = theme === 'lightTheme' ? lightTheme : darkTheme;
+    },
+  },
+  async mounted() {
   }
-}
+};
 </script>
 
 <style>
@@ -25,5 +42,5 @@ export default {
 }
 </style>
 <style lang="scss">
-@import './styles/index.scss';
+@import "./styles/index.scss";
 </style>
