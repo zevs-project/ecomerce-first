@@ -2,8 +2,7 @@
   <div class="page">Women page</div>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style>
 .page {

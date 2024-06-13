@@ -1,33 +1,35 @@
 <template>
   <div class="root" :style="currentTheme">
-    <router-link :to="{ name: 'men' }">Men</router-link>
-    <router-link :to="{ name: 'women' }">Women</router-link>
-
-    <button @click="setTheme('lightTheme')">Light Theme</button>
-    <button @click="setTheme('darkTheme')">Dark Theme</button>
-
+    <NavigationMenu :nav-list="navigationMenu"></NavigationMenu>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import { darkTheme } from './styles/themes/darkTheme';
-import { lightTheme } from './styles/themes/lightTheme';
+import { darkTheme } from "./styles/themes/darkTheme";
+import { lightTheme } from "./styles/themes/lightTheme";
+import NavigationMenu from "./components/NavigationMenu.vue";
+
 export default {
   name: "App",
   data() {
-    return  {
-       currentTheme: lightTheme,
-    }
+    return {
+      currentTheme: lightTheme,
+      navigationMenu: [
+        { name: "men", text: "Men", useNamedPath: true },
+        { name: "women", text: "Women", useNamedPath: true },
+      ],
+    };
   },
-  components: {},
+  components: {
+    NavigationMenu,
+  },
   methods: {
     setTheme(theme) {
-      this.currentTheme = theme === 'lightTheme' ? lightTheme : darkTheme;
+      this.currentTheme = theme === "lightTheme" ? lightTheme : darkTheme;
     },
   },
-  async mounted() {
-  }
+  async mounted() {},
 };
 </script>
 
