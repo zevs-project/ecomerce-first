@@ -1,6 +1,6 @@
 <template>
   <div class="root" :style="currentTheme">
-    <NavigationMenu :nav-list="navigationMenu"></NavigationMenu>
+    <HeaderWrapper></HeaderWrapper>
     <router-view></router-view>
   </div>
 </template>
@@ -8,21 +8,19 @@
 <script>
 import { darkTheme } from "./styles/themes/darkTheme";
 import { lightTheme } from "./styles/themes/lightTheme";
-import NavigationMenu from "./components/NavigationMenu.vue";
+
+import HeaderWrapper from "./views/localViews/HeaderWrapper.vue"
 
 export default {
   name: "App",
   data() {
     return {
       currentTheme: lightTheme,
-      navigationMenu: [
-        { name: "men", text: "Men", useNamedPath: true },
-        { name: "women", text: "Women", useNamedPath: true },
-      ],
+     
     };
   },
   components: {
-    NavigationMenu,
+    HeaderWrapper,
   },
   methods: {
     setTheme(theme) {
