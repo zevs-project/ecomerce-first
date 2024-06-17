@@ -25,6 +25,8 @@ defineProps({
 .navigation-menu {
   display: flex;
   align-content: center;
+  font-family: var(--font-family);
+  color: var(--text-color);
   width: 310px;
 
   .navigation {

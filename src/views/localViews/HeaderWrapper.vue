@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="header-wrapper">
     <img src="./../../assets/images/header-logo.png" alt="Header logo">
     <NavigationMenu :nav-list="navList"></NavigationMenu>
   </header>
@@ -20,4 +20,9 @@ const navList = reactive([
 ]);
 </script>
 
-<style lang="scss"></style>
+<style lang="scss" scoped>
+.header-wrapper {
+  display: flex;
+  align-items: center;
+}
+</style>
